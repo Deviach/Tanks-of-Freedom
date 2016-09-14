@@ -15,7 +15,10 @@ margin/bottom = 720.0
 script/script = ExtResource( 1 )
 initial_position = Vector2( 0, 0 )
 final_position = Vector2( 100, 100 )
-speed = 100
+speed_x = 100
+speed_y = 100
+ease_off = true
+ease_mod = 2
 
 [node name="viewport" type="Viewport" parent="."]
 
