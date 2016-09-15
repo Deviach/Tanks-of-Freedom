@@ -7,6 +7,7 @@ export var speed_x = 1
 export var speed_y = 1
 export var ease_off = false
 export var ease_mod = 1
+export var autostart = true
 
 const CAMERA_THRESHOLD = 1
 
@@ -14,8 +15,14 @@ var camera
 
 func _ready():
     self.camera = self.get_node('viewport/camera')
-    self.set_process(true)
     self.camera.set_offset(self.initial_position)
+    if self.autostart:
+        self.set_process(true)
+    self.set_process_input(true)
+
+func _input(event):
+    if event.type == InputEvent.KEY:
+        self.set_process(true)
 
 func _process(delta):
     var delta_x
